@@ -1,5 +1,6 @@
 import * as React from "react";
 import {Button, Card, Modal, OverlayTrigger, Row, Spinner, Tooltip} from "react-bootstrap";
+import {APP_URL, API_LOGIN_URL} from "../../constants"
 
 class SpotifyPlaylistCleaner extends React.Component {
 
@@ -10,7 +11,7 @@ class SpotifyPlaylistCleaner extends React.Component {
         playlists_info: [],
         temp_uris: [],
         in_progress: false,
-        url: 'https://hoerl.io/api/login',
+        url: API_LOGIN_URL,
         getting_playlists: false,
     }
 
@@ -24,7 +25,7 @@ class SpotifyPlaylistCleaner extends React.Component {
     }
 
     getRefresh = () => {
-        fetch("https://hoerl.io/api/login/refresh?refresh=" + this.state.refresh_token).then(resp => resp.json())
+        fetch(API_LOGIN_URL + "/refresh?refresh=" + this.state.refresh_token).then(resp => resp.json())
             .then(json => this.setAccessToken(json.access_token)).then(() => this.getUserId());
     }
 

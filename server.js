@@ -1,3 +1,5 @@
+import "./constants"
+
 const path = require('path');
 const express = require('express');
 const app = express();
@@ -14,7 +16,7 @@ app.use((req, res, next) => {
 });
 
 let my_client_id = 'a995ddca57104cce9e0bd88f10412212';
-let redirect_uri = 'https://hoerl.io/app';
+let redirect_uri = 'https://playlistcleaner.com/app';
 let my_client_secret = '2fcdedf81ae941dc817490d4d213504c';
 
 app.get('/api/login/callback', cors(), function (req, res) {

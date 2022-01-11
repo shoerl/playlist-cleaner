@@ -4,6 +4,7 @@ import Cookies from 'js-cookie';
 import {useHistory} from "react-router";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faSpotify} from "@fortawesome/free-brands-svg-icons/faSpotify";
+import {APP_URL, API_LOGIN_URL} from "../../constants"
 
 export const SpotifyPlaylistAuthenticator = (props) => {
     const history = useHistory();
@@ -15,7 +16,7 @@ export const SpotifyPlaylistAuthenticator = (props) => {
     }
 
     function getToken(code) {
-        let url = 'https://hoerl.io/api/login/callback?code=' + code;
+        let url = API_LOGIN_URL + '/callback?code=' + code;
         fetch(url).then(resp => resp.json())
             .then(json => saveTokens(json)).then(json => history.push({
             pathname: "app",
@@ -26,7 +27,7 @@ export const SpotifyPlaylistAuthenticator = (props) => {
 
     function getAuthToken() {
         let my_client_id = 'a995ddca57104cce9e0bd88f10412212';
-        let redirect_uri = 'https://hoerl.io/app';
+        let redirect_uri = APP_URL;
         let scopes = 'user-read-private user-library-modify playlist-modify-public playlist-modify-private playlist-read-private';
         window.open('https://accounts.spotify.com/authorize' +
             '?response_type=code' +

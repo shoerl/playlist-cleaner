@@ -1,4 +1,4 @@
-import {Nav, Navbar} from "react-bootstrap";
+import {Nav, Navbar, Row} from "react-bootstrap";
 import * as React from "react";
 import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
@@ -13,7 +13,10 @@ class NavBarComponent extends React.Component {
         return (
             <Navbar bg="dark" expand={true} variant="dark" className={"ml-auto mr-auto"} style={{maxWidth: "900px"}}>
                 <Navbar.Brand href="/app" className="nav-text">
-                    <h2>Playlist Cleaner</h2>
+                    <Row>
+                        <h2 className={"d-none d-sm-block"}>Playlist Cleaner</h2>
+                        <h2 className={"ml-1"}>🎶🧹</h2>
+                    </Row>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
