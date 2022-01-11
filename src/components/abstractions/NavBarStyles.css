@@ -1,0 +1,9 @@
+@media only screen and (max-width: 700px) {
+    svg { font-size: 2em !important; }
+    h2 { font-size: 1em !important; }
+    .buttons-container { margin-right: .5rem !important; }
+}
+
+a {
+    padding: .35rem .35rem .35rem .35rem !important;
+}
