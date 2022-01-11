@@ -6,12 +6,15 @@ const publicPath = path.join(__dirname, '..', 'src');
 const port = process.env.PORT || 3030;
 const axios = require('axios');
 
+/*
 app.use((req, res, next) => {
     if (req.headers['x-forwarded-proto'] !== 'https')
         return res.redirect('https://' + req.headers.host + req.url);
     else
         return next();
 });
+
+ */
 
 let my_client_id = 'a995ddca57104cce9e0bd88f10412212';
 let redirect_uri = 'https://playlistcleaner.com/app';
